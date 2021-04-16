@@ -8,6 +8,8 @@ import pt.iade.unimanage.models.Student;
 public class StudentRepository {
     private static ArrayList<Student> students = new ArrayList<Student>();
 
+
+    // This method is only to create an example of student information
     public static void populate() {
         Student s; // auxiliary variable
         s = new Student("John", LocalDate.parse("2000-05-24"), 'M');
