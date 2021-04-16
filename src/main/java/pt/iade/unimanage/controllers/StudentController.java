@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pt.iade.unimanage.models.Student;
 import pt.iade.unimanage.models.repositories.StudentRepository;
-
+// test joao
 @RestController
 @RequestMapping(path="/api/students")
 public class StudentController {
@@ -36,6 +36,7 @@ public class StudentController {
     public Student deleteStudentByNumber(@PathVariable("number") int number) {
         logger.info("Deleting student with number "+number);
         Student student = StudentRepository.getStudent(number);
+        logger.info("Adding second test");
         if (!StudentRepository.deleteStudent(number))
             logger.info("Student with number "+number+" does not exist");
         return student;
