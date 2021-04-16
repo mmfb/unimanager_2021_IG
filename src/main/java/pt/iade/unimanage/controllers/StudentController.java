@@ -31,6 +31,8 @@ public class StudentController {
         return StudentRepository.getStudent(number);
     }
 
+
+    // Deleting student by number
     @DeleteMapping(path = "/{number}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Student deleteStudentByNumber(@PathVariable("number") int number) {
         logger.info("Deleting student with number "+number);
