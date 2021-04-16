@@ -25,6 +25,7 @@ public class StudentController {
         return StudentRepository.getAllStudents();
     }
 
+    // Get student with the number that was given
     @GetMapping(path = "/{number}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Student getStudentByNumber(@PathVariable("number") int number) {
         logger.info("Sending student with number "+number);
