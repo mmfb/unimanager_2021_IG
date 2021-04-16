@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pt.iade.unimanage.models.Student;
 import pt.iade.unimanage.models.repositories.StudentRepository;
-
+// test joao
 @RestController
 @RequestMapping(path="/api/students")
 public class StudentController {
