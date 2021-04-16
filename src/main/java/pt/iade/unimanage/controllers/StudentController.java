@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,11 @@ public class StudentController {
     public List<Student> getStudents() {
         logger.info("Sending all students");
         return StudentRepository.getAllStudents();
+    }
+
+    @GetMapping(path = "/{number}", produces= MediaType.APPLICATION_JSON_VALUE)
+    public Student getStudentByNumber(@PathVariable("number") int number) {
+        logger.info("Sending student with number "+number);
+        return StudentRepository.getStudent(number);
     }
 }
