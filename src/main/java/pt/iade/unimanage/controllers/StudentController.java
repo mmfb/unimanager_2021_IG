@@ -35,7 +35,8 @@ public class StudentController {
     public Student deleteStudentByNumber(@PathVariable("number") int number) {
         logger.info("Deleting student with number "+number);
         Student student = StudentRepository.getStudent(number);
-        StudentRepository.deleteStudent(number);
+        if (!StudentRepository.deleteStudent(number))
+            logger.info("Student with number "+number+" does not exist");
         return student;
     }
 
